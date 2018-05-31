@@ -1,0 +1,7 @@
+<form (submit)="addTodo(todo.value)">
+  <input type="text" #todo>
+</form>
+<hr>
+<div *ngFor="let list of todoList; let i of index">
+  <span *ngIf="i.id <= 20">{{i.id}}. {{list.title}}</span>
+</div>

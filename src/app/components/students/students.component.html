@@ -1,0 +1,31 @@
+<h1>Students</h1>
+<ul>
+  <li>Student ID: {{studentID}}</li>
+  <li>Name: {{firstName + " " + lastName}}</li>
+  <li>Faculty: {{faculty}}</li>
+  <li>Major: {{major}}</li>
+  <li>Address: {{address.city}}, {{address.province}}, {{address.postcode}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let skill of skills; let i = index">
+    {{i+1}} {{skill}}
+    <button (click)="deleteSkill(skill)">X</button>
+  </li>
+</ul>
+
+<form (submit)="addSkill(skill.value)">
+  <div>
+    <label for="skill">Skill: </label>
+    <input type="text" #skill>
+  </div>
+</form>
+
+<hr>
+<form>
+  <div>
+    <label for="name">Name</label>
+    <input type="text" [(ngModel)]="firstName" name="name">
+    <label for="skill">Skill</label>
+  </div>
+</form>
